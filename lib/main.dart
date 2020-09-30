@@ -19,9 +19,9 @@ class FormPage extends StatefulWidget {
 
 class _FormPageState extends State<FormPage> {
   final scaffoldKey = new GlobalKey<ScaffoldState>();
-  final formKey = new GlobalKey<FormState>();
+  final formKey = new GlobalKey<FormState>();  //creating a form key
 
-  String _email;
+  String _email;                               //variabls
   String _password;
 
   @override
@@ -68,14 +68,14 @@ class _FormPageState extends State<FormPage> {
               children: <Widget>[
                 new TextFormField(
                   decoration: new InputDecoration(labelText: "Email"),
-                  validator: (val) =>
-                      !val.contains('@') ? 'Invalid Email' : null,
+                  validator: (val) =>                                
+                      !val.contains('@') ? 'Invalid Email' : null, //Validating if a Email address is correct or not
                   onSaved: (val) => _email = val,
                 ),
                 new TextFormField(
                   decoration: new InputDecoration(labelText: "Password"),
                   validator: (val) =>
-                      val.length < 6 ? 'Password too short' : null,
+                      val.length < 6 ? 'Password too short' : null,  //Adding conditions for password
                   onSaved: (val) => _password = val,
                   obscureText: true,
                 ),
